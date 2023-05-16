@@ -1,0 +1,392 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --mainColor: #20c997;
+    --secColor: #dee2e6;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url(../Poppins/Poppins-Regular.ttf);
+}
+
+::selection {
+    color: var(--secColor);
+    background-color: var(--mainColor);
+}
+/* --------------------------------------------------- */
+
+/* ----- START NAVBAR------------------------------------ */
+.navbar{
+    position: fixed;
+    top:0;
+    left:0;
+    right: 0;
+    z-index: 100;
+    /* background-color: transparent; */
+}
+nav a[href] {
+    padding: .2rem 1.2rem;
+    border-bottom: 1px solid transparent;
+    border-bottom-width: 0%;
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--mainColor);
+}
+
+.navbar-nav .nav-link {
+    color: var(--secColor);
+}
+
+
+
+/* ----- END NAVBAR----------------------------------------------------------------- */
+
+
+/* ------ START HOME SECTION---------------------------------------------- */
+#home {
+    background-image: url(../images/intro-bg.jpg);
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#layer {
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#layer h1 {
+    font-size: 4rem;
+}
+
+
+
+#layer button {
+    color: var(--mainColor);
+    border: 2px solid var(--mainColor);
+    background-color: transparent;
+    padding: 1rem 3rem;
+    font-size: 1.4rem;
+}
+
+
+#layer #icon i{
+    animation-name: movingDown;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    bottom: 0;
+    position: relative;
+    color: var(--mainColor);
+cursor: pointer;
+}
+
+@keyframes movingDown {
+    from{
+        bottom: 0;
+    }
+
+    to {
+        bottom: -60px;
+    }
+
+}
+#downIcon{
+   position: fixed;
+   bottom: 20px;
+   right: 20px ; 
+   z-index: 100;
+}
+#downIcon i{
+    color: var(--mainColor);
+    cursor: pointer;
+}
+.text-slider-items {
+    display: none;
+}
+
+@media screen and (min-width:500px) and (max-width:768px) {
+    #layer h1{
+        font-size: 3rem;
+    }
+
+}
+
+/* ------ END HOME SECTION---------------------------------------------- */
+
+
+/* ----- START HEAD ------------------------------------------------------------------- */
+#head>p {
+    font-size: 3rem;
+    margin-bottom: 0;
+}
+#head>h2{
+    margin-bottom: 0;
+
+}
+
+#head>h2::after {
+    content: '';
+    background-color: var(--mainColor);
+    width: 40%;
+    height: 3px;
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%) translateY(-500%);
+}
+
+#head>h2 {
+    font-size: 7rem;
+    color: rgba(184, 173, 173, 0.146);
+}
+@media screen and (min-width:500px) and (max-width:768px) {
+   #head>h2{
+    font-size: 4.5rem;
+   } 
+   #head p{
+    font-size: 2.5rem;
+   }
+}
+
+
+/* ------ END HEAD ------------------------------------------------------------------ */
+
+
+/* -------- START ABOUT SECTION--------------------------------------------------------------------------- */
+#about .row ul li{
+    margin-bottom: .8rem;
+    padding-bottom: .7rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+#about .row ul li a{
+    color: var(--mainColor);
+}
+#aboutBtn{
+    background-color: var(--mainColor);
+    color: white;
+    border: 0;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+#about #title{
+    color: var(--mainColor);
+}
+#about #aboutSec{
+    color: rgba(0, 0, 0, 0.6);
+}
+#about #aboutSec>div{
+    border-right: 1px dotted rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+}
+
+#about #aboutSec>div:last-child{
+    border-right:none;
+}
+
+ #about #aboutSec h4{
+font-size: 2.5rem;
+ }
+
+@media screen and (min-width:500px) and (max-width:577px) {
+    #about .row>div:first-child{
+    text-align: center;
+    }
+    #about #aboutSec>div{
+        width: 50%;
+    }
+}
+    @media screen and (min-width:500px) and (max-width:768px) {
+    #about #aboutSec>div:last-child , #about #aboutSec>div:nth-last-child(3) {
+        border:none;
+    } 
+    #about #aboutSec>div:nth-last-child(3) , #about #aboutSec>div:first-child {
+        border-bottom: 1px dotted rgba(0, 0, 0, 0.2); ;
+    } 
+
+
+}
+
+@media screen and (min-width:769px) and (max-width:992px) {
+    #about #aboutSec>div:last-child {
+        border:none;
+    } 
+}
+
+
+
+/* -------- END ABOUT SECTION--------------------------------------------------------------------------- */
+
+
+
+/* -------- START SERVICE SECTION ----------------------------------------------------------------------- */
+#service .row i {
+box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+color: var(--mainColor);
+}
+/* -------- END SERVICE SECTION ----------------------------------------------------------------------- */
+
+/* ------ START SUMMARY SECTION---------------------------------------------------------------- */
+#badge{
+    background-color: var(--mainColor);
+}
+#summaryProgress{
+    height: 10px;
+}
+#summaryProgress>div{
+background-color: var(--mainColor);
+}
+#summary button{
+    border: 2px solid #6c757d;
+    color: #6c757d;
+    background-color: transparent;
+    transition: all 0.5s;
+}
+#summary button:hover{
+    background-color: #6c757d;
+    color: var(--secColor);
+}
+/* ------ END SUMMARY SECTION---------------------------------------------------------------- */
+  
+
+/* ----- START portfolio SECTION---------------------------------------------------------- */
+#portfolio .nav{
+justify-content: center;
+}
+.nav-pills .nav-link.active , .nav-pills .show>.nav-link{
+background-color: transparent;
+color: #20c997;
+}
+.nav-pills .nav-link:hover{
+    color: #20c997;
+}
+.nav-pills .nav-link.active{
+    position: relative;
+}
+.nav-pills{
+
+}
+.nav-pills .nav-link.active::after{
+    content: '';
+    background-color: #20c997;
+    width: 60%;
+    height: 2px;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%);
+}
+.nav-link{
+color: #7b8084;
+}
+#portfolio #pills-tabContent .row img{
+    width: 100%;
+}
+
+#portfolio #pills-tabContent #pills-all img{
+    width: 100%;
+    border-radius: 4px;
+margin-bottom: 1rem;
+/* position: absolute; */
+}
+#portfolio #pills-tabContent  #pills-all  .row div div div{
+    position: relative;
+
+} 
+#portfolio #pills-tabContent #pills-all #protofolio-content>div div{
+    margin-bottom: 0.7rem;
+
+}
+
+/* ----- END portfolio SECTION---------------------------------------------------------- */
+
+/* -------- START testimonial SECTION---------------------------------------------------- */
+
+.slick-slide> div > div.inner-icon > i{
+    color: rgb(224, 224, 116) !important;
+
+}
+ .slick-arrow {
+    display: none !important;
+}
+
+.slick-dots li.slick-active button:before , .slick-dots li button:before{
+    color: var(--mainColor);
+    font-size: 15px;
+}
+@media screen and (min-width:992px) {
+    #testimonial{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    }
+#testimonial .responsive{
+    width: 75%;
+}
+}
+/* -------- END testimonial SECTION---------------------------------------------------- */
+
+
+/* -----------------START CONTACT SECTION  ------------------------------------------- */
+#contact{
+    background-color: var(--secColor);
+}
+#contact .row .col-sm-12 i{
+    padding: .5rem;
+    color: var(--mainColor);
+    font-size: 1.1rem;
+}
+#contact .row .col-sm-12 h3{
+    color: var(--mainColor);
+    /* padding: 1rem; */
+
+}
+#contact .row .col-sm-12 input{
+    border-width: 1px;
+    margin-bottom: 1rem;
+}
+#contact .row .col-sm-12 button{
+    background-color: var(--mainColor);
+    color: white;
+    border: none;
+    font-size: 1.1rem;
+}
+/* -----------------END CONTACT SECTION  ------------------------------------------- */
+
+
+/* -----------------START FOOTER SECTION  ------------------------------------------- */
+#footer a{
+text-decoration: none;
+font-weight: 900;
+color: var(--mainColor);
+}
+#footer li{
+    padding-inline: .5rem;
+
+}
+#footer > div > div.col-lg-4.d-flex.justify-content-center > ul > li:first-child{
+    position: relative;
+}
+
+#footer > div > div.col-lg-4.d-flex.justify-content-center > ul > li:first-child::after{
+content: '';
+position: absolute;
+right: 0;
+width: 1px;
+height: 80%;
+background-color: rgba(0, 0, 0, 0.231);
+display: inline-block;
+}
+
+
+/* -----------------END FOOTER SECTION  ------------------------------------------- */
+
